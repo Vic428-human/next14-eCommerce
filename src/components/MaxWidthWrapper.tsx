@@ -1,15 +1,14 @@
-import React from "react";
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils"; // shadcn
 
-const MyComponent: React.FC = () => {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-      <p>
-        This is a functional component using an arrow function in React 18 with
-        TypeScript.
-      </p>
-    </div>
-  );
+const MaxWidthWrapper = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
+  return <div className={cn("w-6 h-2 bg-blue-400", className)}>{children}</div>;
 };
 
-export default MyComponent;
+export default MaxWidthWrapper;
