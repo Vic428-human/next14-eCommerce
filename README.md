@@ -1,5 +1,8 @@
 ## 備忘
 
+2025/01/31 更新
+嘗試切版的部分都只用 v0.dev 切版，然後再微調
+
 2025/01/29 更新
 目前在做 [e-commerce](https://github.com/Vic428-human/next14-eCommerce) 的 side project。
 
