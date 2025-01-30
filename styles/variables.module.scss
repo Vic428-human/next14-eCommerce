@@ -1,5 +1,73 @@
-$color-primary: blue;
+// breakpoint 共用區
+@import "./global.variables.scss";
+
+/**
+ * 使用範例
+ 說明: 因為這個專案有tailwindcss跟scss兩個分支，方便比照
+
+ $px-20 => tailwindcss 的 px-20 => 80px (scss)
+ $px_2-5 => tailwindcss 的 px-2.5 => 10px (scss)
+ */
+$px-20: 80px; // px-20 轉換為 80px
+$px_2-5: 10px; // px-2.5 轉換為 10px
+$pb-24: 6rem; // pb-24 轉換為 6rem (24 * 0.25rem)
+$pt-10: 2.5rem; // pt-10 轉換為 2.5rem (10 * 0.25rem)
+
+// ----------------------------------------------
+
+/**
+ * 使用範例
+ 說明:
+  Mixin 是一種在 SCSS 中重用代碼塊的方式。
+  它可以讓你定義一組樣式規則，然後在需要的地方通過
+  @include 指令將這些規則包含進去，避免代碼重復。
+*/
+@mixin desktop {
+  @media (min-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint - 1}px) {
+    @content;
+  }
+}
+
+// ----------------------------------------------
+
+.container {
+  // 預設共同區域
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  // RWD模式 切換時差異
+  // 回憶: padding-left 主要差異在 padding-left 的變化
+  @include mobile {
+    padding-left: $px-20;
+  }
+
+  @include desktop {
+    padding-left: $px_2-5;
+  }
+}
+
+// ----------------------------------------------
+.MaxWidthWrapper {
+  padding-bottom: $pb-24;
+  padding-top: $pt-10;
+}
 
 .title {
-  color: $color-primary;
+  // color: $maincolor;
+
+  @include mobile {
+    color: $maincolor;
+  }
+
+  @include desktop {
+    color: red;
+  }
 }

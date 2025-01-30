@@ -1,8 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+
 
 ## Getting Started
 
-First, run the development server:
 
 ```bash
 npm run dev
@@ -13,5 +14,9 @@ pnpm dev
 # or
 bun dev
 ```
+
+## 其他
+variables.module.scss 並透過 CSS Modules 
+Sass: 是一個 CSS 預處理器。它擴展了 CSS 的功能，允許你使用變數、巢狀規則、混合器 (mixins) 等功能來更有效地編寫 CSS。
 
 scssBase/main 這個分支開頭的是 SCSS 基底的
