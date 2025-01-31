@@ -1,3 +1,4 @@
+@use "sass:math";
 // breakpoint 共用區
 @import "./global.variables.scss";
 
@@ -14,6 +15,22 @@ $pb-24: 6rem; // pb-24 轉換為 6rem (24 * 0.25rem)
 $pt-10: 2.5rem; // pt-10 轉換為 2.5rem (10 * 0.25rem)
 
 // ----------------------------------------------
+
+/**
+ * 將 px 單位轉換為 vmin 單位
+ * @param {number} $targetPx - 要轉換的 px 值
+ * @param {number} $baseWidth - 基礎寬度，這邊可以做動態變化，預設是桌面模式
+ * @returns {number} - 轉換後的 vmin 值
+ */
+@function pxToVmin($targetPx, $baseWidth: $baseDesktopWindowWidth) {
+  // 計算 1% 的寬度是多少像素
+  $onePercentWidth: ($baseWidth / 100) * 1px;
+
+  // 判斷 目標像素 在基礎寬度中的百分比
+  $percentageOfBaseWidth: math.div($targetPx, $onePercentWidth);
+
+  @return $percentageOfBaseWidth * 1vmin;
+}
 
 /**
  * 使用範例
@@ -44,13 +61,16 @@ $pt-10: 2.5rem; // pt-10 轉換為 2.5rem (10 * 0.25rem)
   width: 100%;
 
   // RWD模式 切換時差異
-  // 回憶: padding-left 主要差異在 padding-left 的變化
   @include mobile {
-    padding-left: $px-20;
+    // padding-left: $px-20; 會產生跑版
+    padding-left: pxToVmin(
+      $px-20,
+      $baseMobileWindowWidth
+    ); // 改成這樣就不會跑版了
   }
 
   @include desktop {
-    padding-left: $px_2-5;
+    padding-left: pxToVmin($px_2-5);
   }
 }
 

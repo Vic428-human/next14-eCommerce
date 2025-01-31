@@ -5,6 +5,6 @@ $maincolor: #22b781;
 // ~768 手機
 $breakpoint: 768;
 
-//預期用在文字(尚未使用)
+// 依據手機或是Desktop模式，供pxToVmin計算比例使用
 $baseDesktopWindowWidth: 1080;
 $baseMobileWindowWidth: 375;
