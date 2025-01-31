@@ -26,10 +26,10 @@ px 轉換成 vim：
   @return $percentageOfBaseWidth * 1vmin;
 }
 
+```
 
 ## 專案中各分支用途
-scssBase/main 這個分支
-- **scssBase/main**: 該分支會根據 main分支(tailwindcss)的基礎，改以 scss 的情況去改寫
+
+- scssBase/main: 該分支會根據 main 分支(tailwindcss)的基礎，改以 scss 的情況去改寫
 - **功能 2**: 描述功能 2 的作用。
 - **功能 3**: 描述功能 3 的作用。
-```
