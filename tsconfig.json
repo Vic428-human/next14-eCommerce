@@ -17,9 +17,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      // 如果沒設定，會造成 import 時找不到路徑 "@/lib/utils"
+      // 如果沒設定，會造成 import 時找不到路徑 "@/lib/utils" => 這是shadcn的設定方式
       "@/*": ["./src/*"]
+
+      // 下面這個做法不work，因為這是使用 tailus-ui/這個套件，而非此專案 shadcn的設定方式
+      // https://ui.tailus.io/react/get-started/installation/
+      // "@tailus-ui/*": ["/components/tailus-ui/*"],
+      // "@lib/*": ["/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

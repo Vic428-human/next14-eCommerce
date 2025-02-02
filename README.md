@@ -33,7 +33,8 @@ pnpm dev
 
 ## 筆記
 
-px 轉換成 vim：
+### px 轉換成 vim
+
 用途: 因為在縮放 desktop 跟 mobile 的過程，如果不配置 pxToVmin()，
 會產生排版偏移的情況，但實際在使用者觀看下，padding left 也應該要是等比例的縮放。
 而不應該產生偏移。
@@ -49,4 +50,19 @@ px 轉換成 vim：
   @return $percentageOfBaseWidth * 1vmin;
 }
 
+```
+
+### 如何在 tailwindcss 跟 shadcn的基礎上使用 lucide-react ?ㄋ
+在 透過 tailwindcss 的 className 方式附值給 lucide-react 的 icon 組件
+
+```jsx
+<CircleCheckBig className="text-green-500 w-5 h-5" />
+```
+
+lucide-react 的 icon 組件，不透過 tailwindcss 的方式定義大小跟顏色
+
+```jsx
+import { CircleCheckBig } from "lucide-react";
+
+const App = () => <CircleCheckBig color="#22c55e" size={48} />;
 ```

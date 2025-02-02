@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CircleCheckBig } from "lucide-react";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center gap-1.5">
                     {/* <Check className="text-green-500 w-5 h-5" /> */}
+                    <CircleCheckBig className="text-green-500 w-5 h-5" />
                     <span>{feature}</span>
                   </li>
                 ))}

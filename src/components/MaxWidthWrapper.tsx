@@ -10,6 +10,7 @@ const MaxWidthWrapper = ({
 }) => {
   return (
     <div
+      // cn => Tailwind CSS classnames
       className={cn(
         "h-full mx-auto w-full max-w-screen-x1 px-2.5 md:px-20",
         className
